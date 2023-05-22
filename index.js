@@ -22,6 +22,7 @@ database.on('connected',()=>{
     console.log('Ha conectado a Mongo Atlas repitiendo clase!!')
 
 })
+server.use(express.static("public"))
 server.use(express.json())
 
 server.use('/', router)
@@ -35,3 +36,5 @@ server.use('/direcciones',direccionRoutes)
 server.listen(4000, ()=>{
     console.log(`servidor online en puerto 4000`)
 })
+
+module.export = server
